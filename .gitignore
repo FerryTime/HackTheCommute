@@ -57,3 +57,6 @@ target/
 venv
 *.pyc
 staticfiles
+
+# Local DB
+db.sqlite3
