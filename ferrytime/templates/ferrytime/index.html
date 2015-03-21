@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<link type="text/css" rel="stylesheet" href="/static/MobileApp.css">
-<style type="text/css">
-</style>
-<title>MobileApp</title>
-
+  <title>FerryTime!</title>
+  <meta http-equiv="Content-Type"  content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"  href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" >
+  <link type="text/css" rel="stylesheet" href="MobileApp.css">
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js" ></script>
+  <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js" ></script>
 </head>
 <body>
 	<div id="main"></div>
@@ -20,24 +21,29 @@
 		{% endif %}
 		<h4 id="UserName"> Route : Edmonds - Kingston</h4>
 	</div>
-	<div class= "list">
-		<p id = "B1">Next Ferry Available:
-		<select id = "op">
-			<option value = "Time1">5:35 AM  Walla Walla</option>
-			<option value = "Time1">6:20 AM  Spokane</option>
-			<option value = "Time1">7:10 AM  Walla Walla</option>
-			<option value = "Time1">7:55 AM  Spokane</option>
-			<option value = "Time1">8:50 AM  Walla Walla</option>
-			<option value = "Time1">9:40 AM  Spokane</option>
-			<option value = "Time1">3:15 PM  Walla Walla</option>
-			<option value = "Time1">3:55 PM  Spokane</option>
-			<option value = "Time1">4:45 PM  Walla Walla</option>
-			<option value = "Time1">5:25 PM  Spokane</option>
-			<option value = "Time1">6:15 PM  Walla Walla</option>
-		</select></p>
-		<form action = "forecast.html" method = "POST">
-			<input class= "Buttons" type="submit" value ="Select">
+	<div class="ui-field-contain">
+		<form>
+			<label id ="B1" for="select-native-1">Next Ferry Available:</label>
+
+			<select name="select-native-1" id="select-native-1">
+				<option value = "1">5:35 AM  Walla Walla</option>
+				<option value = "2">6:20 AM  Spokane</option>
+				<option value = "3">7:10 AM  Walla Walla</option>
+				<option value = "4">7:55 AM  Spokane</option>
+				<option value = "5">8:50 AM  Walla Walla</option>
+				<option value = "6">9:40 AM  Spokane</option>
+				<option value = "7">3:15 PM  Walla Walla</option>
+				<option value = "8">3:55 PM  Spokane</option>
+				<option value = "9">4:45 PM  Walla Walla</option>
+				<option value = "10">5:25 PM  Spokane</option>
+				<option value = "11">6:15 PM  Walla Walla</option>
+			</select>
 		</form>
+	</div>
+
+	<form action = "forecast.html" method = "POST">
+		<input class= "Buttons" type="submit" value ="Select">
+	</form>
 	</div>
 </body>
 </html>
