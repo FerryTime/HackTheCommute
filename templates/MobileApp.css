@@ -1,0 +1,61 @@
+body {margin:0px;padding:0px;}
+#main > div {bottom:50px;}
+
+h1 {
+	text-align: center;
+	margin-left: 15px;
+	font-size: 30px;
+	font-family: Arial;
+	font-style: italic;
+	color: #339933;
+}
+
+.mainbar{
+	margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+	width: 600px;
+	height: 20px;
+	background-color: #339933;
+	box-shadow: 4px 6px #666666;
+}
+#op{
+	padding: 10px;
+
+}
+#B1{
+	margin-left: 15px;
+	font-family: Arial;
+	color : #339933;
+
+}
+.Buttons{
+	display : inline;
+	padding: 4px 6px;
+	border: 1px solid #777;
+	background: #333333;
+	color: #00cc33;
+	margin-left: 10px;
+	border-radius: 5px;
+	-moz-box-shadow : 2px 2px 2px #555555;
+	-webkit-box-shadow: 2px 2px 2px #555555;
+	box-shadow: 2px 2px 2px #555555;
+}
+#op {
+	background : #333333;
+	color: #00cc33;
+	width: 200px;
+	padding :5px;
+	font-size: 14px;
+	height: 34px;
+}
+#UserName {
+	font-size: 20px;
+	font-family: Arial;
+	padding: 10px;
+	color:#339933;
+}
+#title{
+	letter-spacing: 2px;
+	text-shadow: 4px 0px #666666;
+}
