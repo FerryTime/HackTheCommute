@@ -31,7 +31,8 @@
 			<option value = "Time1">5:25 PM  Spokane</option>
 			<option value = "Time1">6:15 PM  Walla Walla</option>
 		</select></p>
-		<form action = "forecast.html" method = "POST">
+		<form action="forecast" method="POST">
+			{% csrf_token %}
 			<input class= "Buttons" type="submit" value ="Select">
 		</form>
 	</div>
