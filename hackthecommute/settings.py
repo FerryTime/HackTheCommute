@@ -82,11 +82,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+#=================
 # Heroku settings
-# https://devcenter.heroku.com/articles/getting-started-with-django#start-a-django-app-inside-a-virtualenv
+# https://devcenter.heroku.com/articles/getting-started-with-django
+#=================
+
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+DATABASES['default'] =  dj_database_url.config(default='postgres://djangouser:djangolocal@localhost:5433/django')
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
