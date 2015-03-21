@@ -5,26 +5,25 @@
   <meta http-equiv="Content-Type"  content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet"  href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" >
-  <link type="text/css" rel="stylesheet" href="MobileApp.css">
+  <link type="text/css" rel="stylesheet" href="/static/MobileApp.css">
   <script src="http://code.jquery.com/jquery-1.10.2.min.js" ></script>
   <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js" ></script>
 </head>
 <body>
+	<form action="forecast.html" method="POST">
 	<div id="main"></div>
-	<h1 id="title">Ferry Time</h1>
-	<div class = "mainbar"></div>
-	<div>
-		{% if user.is_authenticated %}
-		<h3 id="UserName">Hello {{ user.first_name }},</h3>
-		{% else %}
-		<h3 id="UserName">Please Log in</h3>
-		{% endif %}
-		<h4 id="UserName"> Route : Edmonds - Kingston</h4>
-	</div>
-	<div class="ui-field-contain">
-		<form>
-			<label id ="B1" for="select-native-1">Next Ferry Available:</label>
-
+		<h1 id="title">Ferry Time</h1>
+		<div class = "mainbar"></div>
+		<div>
+			{% if user.is_authenticated %}
+			<h3 id="UserName">Hello {{ user.first_name }},</h3>
+			{% else %}
+			<h3 id="UserName">Please Log in</h3>
+			{% endif %}
+			<h4 id="UserName"> Route : Edmonds - Kingston</h4>
+		</div>
+		<label id ="B1" for="select-native-1">Next Ferry Available:</label>
+		<div class="ui-field-contain">
 			<select name="select-native-1" id="select-native-1">
 				<option value = "1">5:35 AM  Walla Walla</option>
 				<option value = "2">6:20 AM  Spokane</option>
@@ -38,12 +37,9 @@
 				<option value = "10">5:25 PM  Spokane</option>
 				<option value = "11">6:15 PM  Walla Walla</option>
 			</select>
-		</form>
-	</div>
-
-	<form action = "forecast.html" method = "POST">
+		</div>
 		<input class= "Buttons" type="submit" value ="Select">
-	</form>
 	</div>
+	</form>
 </body>
 </html>
