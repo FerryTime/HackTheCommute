@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FerryTime!</title>
+  <meta http-equiv="Content-Type"  content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"  href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" >
+  <script src="http://code.jquery.com/jquery-1.10.2.min.js" ></script>
+  <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js" ></script>
+  <style>
+  	#block {width:200px, height:150px, border: 1px solid black; display: inline-block; vertical-align: top;}
+ 	#header {text-align: center;}
+ 	#main {text-align: center;}
+ 	#tclegend {margin-top: 0; }
+ 	#tclegend li {list-style: none !important; background-image: none !important; padding: 0 !important; display: inline; float: left; margin-right: 6px;}
+ 	#tclegend li:first-child {margin-left: 0px;}
+ 	#tclegend li div {margin-right: 4px; float: left; width: 20px; height: 20px;} 
+  </style>
+</head>
+<body>
+	<div data-role="page">
+		<div data-role="header" id="header">
+    		<h1>Forcast Data</h1>
+ 		</div>
+ 		<div data-role="content" id="main">
+ 			<div id="block">
+  				<div class="content" style="font-size: 1.1em;">
+    				<p><strong>Approximate Vehicle Spaces Available in Holding Area</strong><br/>
+        			<em>Note: Vehicles in line that have not been processed through a tollbooth are not counted here.  
+            			Please <a href="http://www.wsdot.wa.gov/ferries/vesselwatch/cameradetail.aspx?terminalid=8" style="font-weight: bold;">view cameras</a> for additional vehicles queued outside the terminal 
+            			holding area which will subtract from the listed available space.</em>
+        			<div>
+	                	<table style="width: 100%">
+	                	<tbody>
+	                	<tr>
+	                		<td style="width: 10%; font-weight: bold; background-color: #eeeeee;">Depart</td>
+	                		<td style="width: 40%; font-weight: bold; background-color: #eeeeee;">Destination</td>
+	                		<td style="width: 15%; font-weight: bold; background-color: #eeeeee; text-align: center;">Drive-up</td>
+	                		<td class="termcondvessels" style="width: 20%; font-weight: bold; background-color: #eeeeee;">Vessel</td>
+	                	</tr>
+	                	<tr onmouseover="style.backgroundColor='#E8F9E6'" onmouseout="style.backgroundColor=''">
+	                	    <td style="white-space: nowrap;">7:10 AM</td>
+	                	    <td>
+	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/TerminalDetail.aspx?terminalid=12" title="Check Terminal conditions!" target="_self">Kingston</a>
+	                		</td>
+	                		<td style="background-color: #FFFF00; text-align: center;">
+	                			<span style="white-space: nowrap;">38 Spaces</span>
+	                		</td>
+	                		<td class="termcondvessels">
+	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/vesseldetail.aspx?vessel_id=36">Walla Walla</a>
+	                		</td>	
+	                	</tr>
+	                	</tbody>
+	                	</table>
+           				<p id="tclegendheader"><strong>Space Availability Legend</strong></p>
+	                    <ul id="tclegend">
+	                        <li><div style="background-color: #00FF00;"></div>60%-100%</li>
+	                        <li><div style="background-color: #FFFF00;"></div>10%-60%</li>
+	                        <li><div style="background-color: #FF0000;"></div>0%-10%</li>
+	                        <li><div style="background-color: #888888;"></div>Cancelled / Unavailable</li>
+	                    </ul>
+               		</div>
+               	</div>
+               	<div class="content" style="font-size: 1.1em;">
+    				<p><strong>Typical Vehicle Traffic Conditions</strong><br/>
+               		<div>
+	                	<table style="width: 100%">
+	                	<tbody
+	                	<tr>
+	                		<td style="width: 10%; font-weight: bold; background-color: #eeeeee;">Depart</td>
+	                		<td style="width: 40%; font-weight: bold; background-color: #eeeeee;">Destination</td>
+	                		<td style="width: 15%; font-weight: bold; background-color: #eeeeee; text-align: center;">Typical Space</td>
+	                		<td class="termcondvessels" style="width: 20%; font-weight: bold; background-color: #eeeeee;">Vessel</td>
+	                	</tr>
+	                	<tr onmouseover="style.backgroundColor='#E8F9E6'" onmouseout="style.backgroundColor=''">
+	                	    <td style="white-space: nowrap;">7:55 AM</td>
+	                	    <td>
+	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/TerminalDetail.aspx?terminalid=12" title="Check Terminal conditions!" target="_self">Kingston</a>
+	                		</td>
+	                		<td style="background-color: #00FF00; text-align: center;">
+	                			<span style="white-space: nowrap;"></span>
+	                		</td>
+	                		<td class="termcondvessels">
+	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/vesseldetail.aspx?vessel_id=36">Walla Walla</a>
+	                		</td>	
+	                	</tr>
+	                	</tbody>
+	                	</table>
+                    	<p id="tclegendheader"><strong>Space Availability Legend</strong></p>
+	                    <ul id="tclegend">
+	                        <li><div style="background-color: #00FF00;"></div>Vessels typically not full</li>
+	                        <li><div style="background-color: #FFFF00;"></div>Vessels can fill close to sailing time</li>
+	                        <li><div style="background-color: #FF0000;"></div>Likely to wait one sailing or more</li>
+	                        <li><div style="background-color: #888888;"></div>No sailing</li>
+	                    </ul>
+           			</div>
+			    </div>	
+				<div>
+					<a class="twitter-timeline"  href="https://twitter.com/wsferries" data-widget-id="579352739479568384">Tweets by @wsferries</a>
+					<script>!function(d,s,id){
+						var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
+						if(!d.getElementById(id)){
+							js=d.createElement(s);
+							js.id=id;
+							js.src=p+"://platform.twitter.com/widgets.js";
+							fjs.parentNode.insertBefore(js,fjs);}
+						}
+						(document,"script","twitter-wjs");
+					</script>
+				</div>
+			</div>
+		</div>
+		<script>$(function() {
+			$(window).bind('orientationchange', layout);
+			function layout() {
+				var wid = $(window).width();
+			  	var hgt = $(window).height();
+			  	if(wid > hgt) {
+			     	$("#controls").css("display", "inline-block");
+			     	$(".btn").css("display", "block");
+			  	} else {
+			    	$("#controls").css("display", "block");
+			     	$(".btn").css("display", "inline-block");
+			  	}
+		    }
+		    layout();
+		});
+	    </script>
+	</div>
+</body>
+</html>
