@@ -89,7 +89,7 @@ STATIC_URL = '/static/'
 
 # Parse database configuration from $DATABASE_URL
 import dj_database_url
-if (os.environ['DATABASE_URL']):
+if (os.environ.get('DATABASE_URL')):
     DATABASES['default'] =  dj_database_url.config()
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
