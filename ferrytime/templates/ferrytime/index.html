@@ -13,7 +13,11 @@
 	<h1 id="title">Ferry Time</h1>
 	<div class = "mainbar"></div>
 	<div>
-		<h3 id="UserName">Welcome Bill Jackson</h3>
+		{% if user.is_authenticated %}
+		<h3 id="UserName">Hello {{ user.first_name }},</h3>
+		{% else %}
+		<h3 id="UserName">Please Log in</h3>
+		{% endif %}
 		<h4 id="UserName"> Route : Edmonds - Kingston</h4>
 	</div>
 	<div class= "list">
