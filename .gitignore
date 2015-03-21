@@ -52,3 +52,8 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Heroku recommendations
+venv
+*.pyc
+staticfiles

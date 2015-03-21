@@ -12,3 +12,10 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "hackthecommute.settings")
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
+
+# Heroku for static files
+# https://devcenter.heroku.com/articles/getting-started-with-django#start-a-django-app-inside-a-virtualenv
+from django.core.wsgi import get_wsgi_application
+from dj_static import Cling
+
+application = Cling(get_wsgi_application())
