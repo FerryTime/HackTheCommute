@@ -28,7 +28,7 @@ def index(request):
     for time in times:
         json_date = time.get('DepartingTime')
         milliseconds_since_epoch_tz = int(json_date[6:-7])
-        hours_gmt_offset = int(json_date[-5:-4])
+        hours_gmt_offset = int(json_date[-7:-4])
         seconds_since_epoch_tz = milliseconds_since_epoch_tz / 1000
         seconds_gmt_offset = 60 * 60
         seconds_since_epoch = seconds_since_epoch_tz + seconds_gmt_offset
