@@ -101,7 +101,9 @@ def register(request):
     return render(request, "registration/register.html", {
         'form': form,
     })
+
 def login(request):
+    
     pass
 
 def datetime_from_asp_json(json_date):

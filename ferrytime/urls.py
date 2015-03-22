@@ -11,5 +11,5 @@ urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
     url(r'^forecast$', views.forecast, name='forecast'),
     url(r'^register$', views.register, name='register'),
-    url(r'^login$', views.login, name='login'),
+    url(r'^login$', 'django.contrib.auth.views.login', name='login'),
 )
