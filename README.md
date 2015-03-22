@@ -68,7 +68,7 @@ We made use of:
 
 In order to build and run our app:
 
-1. Something needs to happen.
+1. Visit our [Heoku hosted mobile web app](http://fairytime.herokuapp.com).
 
 Our code is licensed under the [MIT License](LICENSE.md). Pull requests will be accepted to this repo, pending review and approval.
 
