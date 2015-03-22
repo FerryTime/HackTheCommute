@@ -48,7 +48,7 @@ Our team is comprised of:
 - [@thalijw](http://github.com/thalijw) - Wisam Thalij - general javascript and html stuffs
 - [@bkstamm67](http://github.com/bkstamm67) - Brian Stamm - general data stuffs
 - [@musickka](http://github.com/musickka) - Katie Musick - general javascript and html stuffs
-- [@]() - Latham Fell - general support, father extraordinaire
+- [@LathamFell](https://twitter.com/LathamFell) - Latham Fell - general support, father extraordinaire
 - [@shawnbuck8](http://github.com/shawnbuck8) - Shawn Buck - general mapping stuffs
 - [@qayshp](http://github.com/qayshp) - Qays Poonawala - general dev stuffs
 
