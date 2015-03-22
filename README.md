@@ -59,7 +59,10 @@ We made use of:
 - Hand harvested unicorn tears. Unicorns are very happy creatures, its hard to make them cry.
 - [mod_bf](http://modbf.sourceforge.net/)
 - The [Top 1,000 Songs To Hear Before You Die](https://opendata.socrata.com/Fun/Top-1-000-Songs-To-Hear-Before-You-Die/ed74-c6ni) dataset and [API](http://dev.socrata.com/foundry/#/opendata.socrata.com/ed74-c6ni)
-- The [WSDOT Ferries Website](http://wsdot.wa.gov/ferries/)
+- The [WSDOT API Website](http://wsdot.wa.gov/traffic/api/)
+    - Specifically, [WSDOT Ferries Terminals] (http://www.wsdot.wa.gov/ferries/api/terminals/rest/help)
+    - And, [WSDOT Ferries Schedule] (http://www.wsdot.wa.gov/ferries/api/schedule/rest/help)
+- @wsdot  WSDOT Twitter feed
 
 ## Contributing
 
