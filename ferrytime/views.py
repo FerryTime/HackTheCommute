@@ -24,6 +24,7 @@ def index(request):
     for time in times:
         timeIn = time.get('DepartingTime')
         timeSlice = int(timeIn[6:-7])
+        offset = int(timeIn[-5:-6])
         d = datetime.fromtimestamp(timeSlice/1000.00)
         departures.append(str(d))
 
