@@ -4,7 +4,7 @@ The purpose of this app is to help ferry commuters in Washington State.
 
 This application was developed on 2015-03-2[0-2] for the 2015 Seattle [Hack The Commute](http://hackthecommute.seattle.gov).
 
-![We like Fairies and Ferries!](screenshot.jpg)
+![We like Fairies and Ferries!](https://raw.github.com/bkstamm67/HackTheCommute/blob/master/ferrytime/Ferry_Wenatchee_enroute_to_Bainbridge_Island_WA.jpg)
 TODO: Add the photo, and remove this todo!
 
 Our app is live at http://fairytime.herokuapp.com/.
