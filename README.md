@@ -17,7 +17,7 @@ Our approach for satisfying this challenge was to:
 
 1.  Our Concept.
     - Commuting via ferry can be troublesome at best
-        Example from the [King5 News](http://www.king5.com/story/news/local/seattle/2014/08/19/ferry-passengers-frustrated-over-problems/14182429/) about the traffic at Fauntleroy
+        - Example from the [King5 News](http://www.king5.com/story/news/local/seattle/2014/08/19/ferry-passengers-frustrated-over-problems/14182429/) about the traffic at Fauntleroy
     - Everyone who has used the ferry has the experience of waiting in the queue, not knowing if you'll make it
     - 23 million users depend on the ferry system 
         Many of the surrounding areas need to get into Seattle, which has the highest income average in the region
@@ -59,9 +59,6 @@ Our team is comprised of:
 
 We made use of:
 
-- Hand harvested unicorn tears. Unicorns are very happy creatures, its hard to make them cry.
-- [mod_bf](http://modbf.sourceforge.net/)
-- The [Top 1,000 Songs To Hear Before You Die](https://opendata.socrata.com/Fun/Top-1-000-Songs-To-Hear-Before-You-Die/ed74-c6ni) dataset and [API](http://dev.socrata.com/foundry/#/opendata.socrata.com/ed74-c6ni)
 - The [WSDOT API Website](http://wsdot.wa.gov/traffic/api/)
     - Specifically, [WSDOT Ferries Terminals] (http://www.wsdot.wa.gov/ferries/api/terminals/rest/help)
     - And, [WSDOT Ferries Schedule] (http://www.wsdot.wa.gov/ferries/api/schedule/rest/help)
@@ -71,13 +68,11 @@ We made use of:
 
 In order to build and run our app:
 
-1. Harvest yourself some unicorn tears. They're expensive to purchase on your own.
-2. [Deploy your the code](https://github.com/masylum/Brainfuck-on-Rails) to [Heroku](http://heroku.com)
-3. Profit
+1. Something needs to happen.
 
 Our code is licensed under the [MIT License](LICENSE.md). Pull requests will be accepted to this repo, pending review and approval.
 
-Copyright (c) 2015 Chris Metcalf
+Copyright (c) 2015 Ferry Time, Incorporated.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

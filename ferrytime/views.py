@@ -43,6 +43,23 @@ def forecast(request):
     selected_time = request.GET['time']
     human_time = datetime_from_asp_json(selected_time)
 
+    schedule_url = ''.join([rest_base,"Schedule/rest/scheduletoday/6/false"])
+    result_json = requests.get(schedule_url, params=payload).json()
+    terminal_combinations = result_json.get(u'TerminalCombos')
+    kingston_departures = terminal_combinations[1]
+    terminal_id = None
+    times = None
+
+    for x in terminal_combinations:
+        if x['DepartingTerminalName'] == 'Kingston':
+            terminal_id = x['DepartingTerminalID']
+            times = x['Times']
+            break
+
+    departure_times = list()
+    for time in departure_times:
+        print(time)
+
     forecast_url = ''.join([rest_base,"Terminals/rest/terminalsailingspace/", terminal_id])
     result = requests.get(forecast_url, params=payload)
     if result.status_code != 200 :
