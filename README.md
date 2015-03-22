@@ -21,6 +21,25 @@ Our approach for satisfying this challenge was to:
 
 Once we did that, we knew we were guaranteed to win!
 
+1.  Our Concept.
+    - Commuting via ferry can be troublesome at best
+    - Everyone who has used the ferry has the experience of waiting in the queue, not knowing if you'll make it
+    - Anyone in the city knows the mess on Fauntleroy and the impact to commuters
+    - Many depend on the ferry system to get into Seattle, which has the highest income average in the region
+2.  Execution.
+    - Awesomeness of Ferry's Fairies, to be seen in action!
+3.  The Impact.
+    - People have a better travel experience by knowing what to expect
+    - From this app, it can build more real time information for WSF, which can inform policy makers 
+4.  Implementation & Sustainability.
+    - Imp and substained can depend on advertising to ferry commuters 
+      - From feedback, interest seems high
+    - Moving forward - need realtime assessment for people "up stream" of the toll booth
+      - Utilization of GPS location
+      - User inputted landmarks?
+      - sensors?
+    - Connecting with the Ferry Commnunity
+
 ## Team Members
 
 Our team is comprised of:
