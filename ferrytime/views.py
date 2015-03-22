@@ -6,6 +6,7 @@ from django.core.context_processors import csrf
 import json
 import requests
 from datetime import datetime
+from datetime import timedelta
 from django.http import Http404
 from django.http import HttpResponse
 
@@ -17,7 +18,6 @@ def index(request):
     schedule_url = ''.join([rest_base,"Schedule/rest/scheduletoday/6/false"])
     result_json = requests.get(schedule_url, params=payload).json()
     terminal_combinations = result_json.get(u'TerminalCombos')
-    kingston_departures = terminal_combinations[1]
     terminal_id = None
     times = None
 
@@ -30,8 +30,9 @@ def index(request):
     departure_times = list()
     for time in times:
         json_date = time.get('DepartingTime')
-        d = datetime_from_asp_json(json_date)
-        departure_times.append(((str(d)),str(json_date)))
+        departure_time = datetime_from_asp_json(json_date)
+        if departure_time > (datetime.now() - timedelta(hours=7)):
+            departure_times.append(((str(departure_time)),str(json_date)))
 
     # need terminal ID and departure time
     schedule = departure_times
@@ -43,10 +44,10 @@ def forecast(request):
     selected_time = request.GET['time']
     human_time = datetime_from_asp_json(selected_time)
 
+    # Get schedule
     schedule_url = ''.join([rest_base,"Schedule/rest/scheduletoday/6/false"])
     result_json = requests.get(schedule_url, params=payload).json()
     terminal_combinations = result_json.get(u'TerminalCombos')
-    kingston_departures = terminal_combinations[1]
     terminal_id = None
     times = None
 
@@ -57,9 +58,16 @@ def forecast(request):
             break
 
     departure_times = list()
-    for time in departure_times:
-        print(time)
+    for time in times:
+        json_date = time.get('DepartingTime')
+        departure_datetime = datetime_from_asp_json(json_date)
+        if departure_datetime > human_time:
+            departure_times.append(((str(departure_datetime)),str(json_date)))
 
+    for time in departure_times:
+        str(time[0])
+
+    # Get data on spots available
     forecast_url = ''.join([rest_base,"Terminals/rest/terminalsailingspace/", str(terminal_id)])
     result = requests.get(forecast_url, params=payload)
     if result.status_code != 200 :
