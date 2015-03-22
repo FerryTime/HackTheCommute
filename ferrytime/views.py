@@ -24,7 +24,7 @@ def index(request):
     for time in times:
         timeIn = time.get('DepartingTime')
         timeSlice = int(timeIn[6:-7])
-        offset = int(timeIn[-5:-6])
+        #offset = int(timeIn[-5:-6])
         d = datetime.fromtimestamp(timeSlice/1000.00)
         departures.append(str(d))
 
@@ -37,6 +37,9 @@ def forecast(request):
     selected_time = request.GET['time']
 
     url = "http://www.wsdot.wa.gov/Ferries/API/Terminals/rest/terminalsailingspace?apiaccesscode=ffd8b8c2-c4e6-4784-a9df-2b8f7ee6dfc5"
+    # http://www.wsdot.wa.gov/Ferries/API/Terminals/rest/terminalsailingspace/12?apiaccesscode=ffd8b8c2-c4e6-4784-a9df-2b8f7ee6dfc5
+    # DriveUpSpaceCount
+    # filter with selected_time on DepartingSpaces:Departure
     terminal_combinations = requests.get(url).json().get(u'TerminalCombos')
     kingston_departures= terminal_combinations[1]
 
