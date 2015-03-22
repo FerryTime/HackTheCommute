@@ -26,7 +26,7 @@
 		<div class="ui-field-contain">
 			<select name="time" id="select-native-1">
 				{% for time in schedule %}
-					<option value = "{{time}}">{{ time }}</option>
+					<option value = "{{ time.1 }}">{{ time.0 }}</option>
 				{% endfor %}
 			</select>
 			<input type="hidden" name="terminal_id" value="{{ terminal_id }}"/>
