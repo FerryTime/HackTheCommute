@@ -17,7 +17,7 @@ Our approach for satisfying this challenge was to:
 
 1.  Our Concept.
     - Commuting via ferry can be troublesome at best
-        Example from the [King5 News](http://www.king5.com/story/news/local/seattle/2014/08/19/ferry-passengers-frustrated-over-problems/14182429/) about the traffic at Fauntleroy
+        - Example from the [King5 News](http://www.king5.com/story/news/local/seattle/2014/08/19/ferry-passengers-frustrated-over-problems/14182429/) about the traffic at Fauntleroy
     - Everyone who has used the ferry has the experience of waiting in the queue, not knowing if you'll make it
     - 23 million users depend on the ferry system 
         Many of the surrounding areas need to get into Seattle, which has the highest income average in the region
@@ -59,9 +59,6 @@ Our team is comprised of:
 
 We made use of:
 
-- Hand harvested unicorn tears. Unicorns are very happy creatures, its hard to make them cry.
-- [mod_bf](http://modbf.sourceforge.net/)
-- The [Top 1,000 Songs To Hear Before You Die](https://opendata.socrata.com/Fun/Top-1-000-Songs-To-Hear-Before-You-Die/ed74-c6ni) dataset and [API](http://dev.socrata.com/foundry/#/opendata.socrata.com/ed74-c6ni)
 - The [WSDOT API Website](http://wsdot.wa.gov/traffic/api/)
     - Specifically, [WSDOT Ferries Terminals] (http://www.wsdot.wa.gov/ferries/api/terminals/rest/help)
     - And, [WSDOT Ferries Schedule] (http://www.wsdot.wa.gov/ferries/api/schedule/rest/help)
