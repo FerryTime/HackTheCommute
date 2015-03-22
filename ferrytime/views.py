@@ -86,12 +86,12 @@ def forecast(request):
     # drive_up_space_count / max_space_count
     percentage = drive_up_space_count / max_space_count
     
-    if percentage > 0.60:
-        bg_color = "#FF0000"
-    elif 0.60 > percentage > 0.10:
-        bg_color = "#FFFF66"
-    elif 0.10 > percentage:
-        bg_color = "#339966"
+    #if percentage > 0.60:
+    bg_color = "#FF0000"
+    #elif 0.60 > percentage > 0.10:
+    #    bg_color = "#FFFF66"
+    #elif 0.10 > percentage:
+    #    bg_color = "#339966"
 
     context = {"space" : drive_up_space_count, "time": human_time, "vessel_name": vessel_name, "vessel_id": vessel_id, "bg_color": bg_color}
 
