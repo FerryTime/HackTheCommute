@@ -30,7 +30,7 @@ Our approach for satisfying this challenge was to:
     - One app to rule them all
     - Commuters can plan and adjust according to realtime data of ferry waits
     - From this app, it can build more real time information for WSF, which can inform policy makers
-    - Creating an outlet for and creating access to the Ferry Community
+    - Can collect a large dataset of users and wait times 
 
 4.  Implementation & Sustainability.
     - Need More Routes
@@ -42,6 +42,9 @@ Our approach for satisfying this challenge was to:
       - Vehicle Detection Loops
     - Connecting with the Ferry Commnunity
     - Parking Space Information for Walk-Ons
+    - Sustainability
+        - Start with volunteer
+        - As usership grows, dataset becomes more valuable
 
 ## Team Members
 
