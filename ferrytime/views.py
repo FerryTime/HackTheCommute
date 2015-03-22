@@ -19,9 +19,12 @@ def index(request):
         departures.append(time.get('DepartingTime'))
 
     # need terminal ID and departure time
-    context = { "schedule":departures }
+    context = { "schedule":departures, "terminal_id":terminal_id }
     return render(request, 'ferrytime/index.html', context)
 
 def forecast(request):
+    terminal_id = request.get('terminal_id')
+    selected_time = request.get('time')
+
     context = {}
     return render(request, 'ferrytime/forecast.html', context)
