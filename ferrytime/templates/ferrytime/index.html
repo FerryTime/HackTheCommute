@@ -24,18 +24,10 @@
 		</div>
 		<label id ="B1" for="select-native-1">Next Ferry Available:</label>
 		<div class="ui-field-contain">
-			<select name="select-native-1" id="select-native-1">
-				<option value = "1">5:35 AM  Walla Walla</option>
-				<option value = "2">6:20 AM  Spokane</option>
-				<option value = "3">7:10 AM  Walla Walla</option>
-				<option value = "4">7:55 AM  Spokane</option>
-				<option value = "5">8:50 AM  Walla Walla</option>
-				<option value = "6">9:40 AM  Spokane</option>
-				<option value = "7">3:15 PM  Walla Walla</option>
-				<option value = "8">3:55 PM  Spokane</option>
-				<option value = "9">4:45 PM  Walla Walla</option>
-				<option value = "10">5:25 PM  Spokane</option>
-				<option value = "11">6:15 PM  Walla Walla</option>
+			<select name="time" id="select-native-1">
+				{% for time in schedule %}
+					<option value = "1">{{ time }}</option>
+				{% endfor %}
 			</select>
 		</div>
 		<input class= "Buttons" type="submit" value ="Select">
