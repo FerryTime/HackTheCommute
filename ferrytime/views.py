@@ -52,7 +52,7 @@ def forecast(request):
 
     # DriveUpSpaceCount
     # filter with selected_time on DepartingSpaces:Departure
-    terminal_combinations = requests.get(url).json().get(u'TerminalCombos')
+    terminal_combinations = result_json.get(u'TerminalCombos')
     kingston_departures= terminal_combinations[1]
 
     terminal_id = kingston_departures.get(u'DepartingTerminalID')
