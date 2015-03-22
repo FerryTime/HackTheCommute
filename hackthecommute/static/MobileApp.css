@@ -24,7 +24,6 @@ h1 {
 	width: 800px;
 	height: 5px;
 	background-color: #366B23;
-	box-shadow: 4px 6px #666666;
 }
 #op{
 	padding: 10px;
@@ -44,9 +43,6 @@ h1 {
 	color: #366B23;
 	margin-left: 10px;
 	border-radius: 5px;
-	-moz-box-shadow : 2px 2px 2px #555555;
-	-webkit-box-shadow: 2px 2px 2px #555555;
-	box-shadow: 2px 2px 2px #555555;
 }
 #op {
 	background : #333333;
@@ -64,8 +60,11 @@ h1 {
 }
 #title{
 	letter-spacing: 2px;
-	text-shadow: 4px 0px #666666;
 }
+.whiteBack{
+	background-color: #ffffff;
+}
+
 .ui-btn-icon-left:after,
 .ui-btn-icon-right:after,
 .ui-btn-icon-top:after,

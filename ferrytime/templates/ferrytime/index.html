@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>FerryTime!</title>
+  <title>Ferry Fairy</title>
   <meta http-equiv="Content-Type"  content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet"  href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css" >
@@ -14,9 +14,15 @@
 <body>
 	<div class = "content">
 	<form action="forecast" method="GET">
-	<div id="main"></div>
-		<h1 id="title">Ferry Time</h1>
-		<div class = "mainbar"></div>
+    <div class="whiteBack">
+      <table style="width:100%">
+        <tr>
+          <td><img src="/static/FerryFairy.png"></td>
+          <td><h1 id="title">Ferry Fairy</h1></td>
+        </tr>
+      </table>
+    </div>
+
 		<div>
 			{% if user.is_authenticated %}
 			<h3 id="UserName">Hello {{ user.first_name }},</h3>
