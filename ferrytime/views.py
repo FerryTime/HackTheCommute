@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.core.context_processors import csrf
-=======
+
 import json
 import requests
 
@@ -29,8 +29,8 @@ def index(request):
     return render(request, 'ferrytime/index.html', context)
 
 def forecast(request):
-    terminal_id = request.get('terminal_id')
-    selected_time = request.get('time')
+    terminal_id = request.GET['terminal_id']
+    selected_time = request.GET['time']
 
     context = {}
     return render(request, 'ferrytime/forecast.html', context)
