@@ -4,7 +4,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.core.context_processors import csrf
-=======
 import json
 import requests
 
