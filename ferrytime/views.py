@@ -52,19 +52,21 @@ def forecast(request):
     # filter with selected_time on DepartingSpaces:Departure
     departing_spaces = result_json.get(u'DepartingSpaces')
 
-    text = str()
     drive_up_space_count = str()
+    vessel_name = str()
+    vessel_id = str()
 
-    text += str(selected_time)
     for x in departing_spaces:
         if str(x[u'Departure']) == selected_time:
             drive_up_space_count = str(x['SpaceForArrivalTerminals'][0]['DriveUpSpaceCount'])
             drive_up_space_count += " Vehicle Spaces"
+            vessel_name = str(x['SpaceForArrivalTerminals'][0]['VesselName'])
+            vessel_id = str(x['SpaceForArrivalTerminals'][0]['VesselID'])
             break
         else:
             drive_up_space_count = "Data Currently Unavailable"
 
-    context = {"space" : drive_up_space_count, "time": human_time, "text": text}
+    context = {"space" : drive_up_space_count, "time": human_time, "vessel_name": vessel_name, "vessel_id": vessel_id}
 
     return render(request, 'ferrytime/forecast.html', context)
 
