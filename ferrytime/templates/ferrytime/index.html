@@ -26,12 +26,13 @@
 		<div>
 			{% if user.is_authenticated %}
 			<h3 id="UserName">Hello {{ user.first_name }},</h3>
+      <h4 id="UserName"> Route : Kingston - Edmonds</h4>
 			{% else %}
 			<h3 id="UserName">Please Log in</h3>
 			{% endif %}
-			<h4 id="UserName"> Route : Kingston - Edmonds</h4>
+
 		</div>
-		<label id ="B1" for="select-native-1">Next Ferry Available:</label>
+		<label id ="B1" for="select-native-1">Sailing times:</label>
 		<div class="ui-field-contain">
 			<select name="time" id="select-native-1">
 				{% for time in schedule %}
