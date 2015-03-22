@@ -60,7 +60,7 @@ def forecast(request):
     for time in departure_times:
         print(time)
 
-    forecast_url = ''.join([rest_base,"Terminals/rest/terminalsailingspace/", terminal_id])
+    forecast_url = ''.join([rest_base,"Terminals/rest/terminalsailingspace/", str(terminal_id)])
     result = requests.get(forecast_url, params=payload)
     if result.status_code != 200 :
         return HttpResponse('<html><head><title>Sorry!</title></head><body>No current sailings.</body></html>')
