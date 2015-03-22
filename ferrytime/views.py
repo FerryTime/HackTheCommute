@@ -30,7 +30,7 @@ def index(request):
         milliseconds_since_epoch_tz = int(json_date[6:-7])
         hours_gmt_offset = int(json_date[-7:-4])
         seconds_since_epoch_tz = milliseconds_since_epoch_tz / 1000
-        seconds_gmt_offset = 60 * 60
+        seconds_gmt_offset = 60 * 60 * hours_gmt_offset
         seconds_since_epoch = seconds_since_epoch_tz + seconds_gmt_offset
         d = datetime.fromtimestamp(seconds_since_epoch)
         departure_times.append(((str(d)),str(json_date)))
