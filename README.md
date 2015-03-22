@@ -71,13 +71,11 @@ We made use of:
 
 In order to build and run our app:
 
-1. Harvest yourself some unicorn tears. They're expensive to purchase on your own.
-2. [Deploy your the code](https://github.com/masylum/Brainfuck-on-Rails) to [Heroku](http://heroku.com)
-3. Profit
+1. Something needs to happen.
 
 Our code is licensed under the [MIT License](LICENSE.md). Pull requests will be accepted to this repo, pending review and approval.
 
-Copyright (c) 2015 Chris Metcalf
+Copyright (c) 2015 Ferry Time, Incorporated.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
