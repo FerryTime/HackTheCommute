@@ -18,21 +18,19 @@ def index(request):
     result_json = requests.get(schedule_url, params=payload).json()
     terminal_combinations = result_json.get(u'TerminalCombos')
     kingston_departures = terminal_combinations[1]
+    terminal_id = None
+    times = None
 
-    terminal_id = kingston_departures.get(u'DepartingTerminalID')
-
-    times = kingston_departures.get(u'Times')
+    for x in terminal_combinations:
+        if x['DepartingTerminalName'] == 'Kingston':
+            terminal_id = x['DepartingTerminalID']
+            times = x['Times']
+            break
 
     departure_times = list()
-
     for time in times:
         json_date = time.get('DepartingTime')
-        milliseconds_since_epoch_tz = int(json_date[6:-7])
-        hours_gmt_offset = int(json_date[-7:-4])
-        seconds_since_epoch_tz = milliseconds_since_epoch_tz / 1000
-        seconds_gmt_offset = 60 * 60 * hours_gmt_offset
-        seconds_since_epoch = seconds_since_epoch_tz + seconds_gmt_offset
-        d = datetime.fromtimestamp(seconds_since_epoch)
+        d = datetime_from_asp_json(json_date)
         departure_times.append(((str(d)),str(json_date)))
 
     # need terminal ID and departure time
@@ -43,6 +41,7 @@ def index(request):
 def forecast(request):
     terminal_id = request.GET['terminal_id']
     selected_time = request.GET['time']
+    human_time = datetime_from_asp_json(selected_time)
 
     forecast_url = ''.join([rest_base,"Terminals/rest/terminalsailingspace/", terminal_id])
     result = requests.get(forecast_url, params=payload)
@@ -50,20 +49,22 @@ def forecast(request):
         return HttpResponse('<html><head><title>Sorry!</title></head><body>No current sailings.</body></html>')
     result_json = result.json()
 
-    # DriveUpSpaceCount
     # filter with selected_time on DepartingSpaces:Departure
-    terminal_combinations = result_json.get(u'TerminalCombos')
-    kingston_departures= terminal_combinations[1]
+    departing_spaces = result_json.get(u'DepartingSpaces')
 
-    terminal_id = kingston_departures.get(u'DepartingTerminalID')
+    text = str()
+    drive_up_space_count = str()
 
-    data = kingston_departures.get(u'SpaceForArrivalTerminals')
+    text += str(selected_time)
+    for x in departing_spaces:
+        if str(x[u'Departure']) == selected_time:
+            drive_up_space_count = str(x['SpaceForArrivalTerminals'][0]['DriveUpSpaceCount'])
+            drive_up_space_count += " Vehicle Spaces"
+            break
+        else:
+            drive_up_space_count = "Data Currently Unavailable"
 
-    driveUp = list()
-    for space in spaces:
-        driveUp.append(space.get(u'DriveUpSpaceCount'))
-
-    context = {"space":driveUp}
+    context = {"space" : drive_up_space_count, "time": human_time, "text": text}
 
     return render(request, 'ferrytime/forecast.html', context)
 
@@ -78,3 +79,11 @@ def register(request):
     return render(request, "registration/register.html", {
         'form': form,
     })
+
+def datetime_from_asp_json(json_date):
+    milliseconds_since_epoch_tz = int(json_date[6:-7])
+    hours_gmt_offset = int(json_date[-7:-4])
+    seconds_since_epoch_tz = milliseconds_since_epoch_tz / 1000
+    seconds_gmt_offset = 60 * 60 * hours_gmt_offset
+    seconds_since_epoch = seconds_since_epoch_tz + seconds_gmt_offset
+    return(datetime.fromtimestamp(seconds_since_epoch))
