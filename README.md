@@ -9,6 +9,12 @@ This application was developed on 2015-03-2[0-2] for the 2015 Seattle [Hack The 
 
 Our app is live at http://fairytime.herokuapp.com/.
 
+Screen Shots:
+
+![Screen1](https://github.com/FerryTime/HackTheCommute/blob/master/Screenshot_2015-03-22-16-26-26.png)
+
+![Screen2](https://github.com/FerryTime/HackTheCommute/blob/master/Screenshot_2015-03-22-16-27-25-1.png)
+
 ## Challenge and Approach
 
 Our submission is for [Challenge #2: Improve the commuter experience in any single mode](https://codeforseattle.hackpad.com/Submission-Guidelines-UTxrlISdazl).
