@@ -9,8 +9,8 @@
   <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js" ></script>
   <style>
   	#block {width:200px, height:150px, border: 1px solid black; display: inline-block; vertical-align: top;}
- 	#header {text-align: center;}
- 	#main {text-align: center;}
+ 	#header {text-align: center; background-color:#336600;}
+ 	#main {text-align: center; background-color: #cdeec1;}
  	#tclegend {margin-top: 0; }
  	#tclegend li {list-style: none !important; background-image: none !important; padding: 0 !important; display: inline; float: left; margin-right: 6px;}
  	#tclegend li:first-child {margin-left: 0px;}
@@ -20,95 +20,63 @@
 <body>
 	<div data-role="page">
 		<div data-role="header" id="header">
-    		<h1>Forcast Data</h1>
+    		<h1 style="font-size:20px; color:#FFFFFF;">Kingston to<br>Edmonds</h1>
  		</div>
  		<div data-role="content" id="main">
  			<div id="block">
   				<div class="content" style="font-size: 1.1em;">
-    				<p><strong>Approximate Vehicle Spaces Available in Holding Area</strong><br/>
-        			<em>Note: Vehicles in line that have not been processed through a tollbooth are not counted here.
-            			Please <a href="http://www.wsdot.wa.gov/ferries/vesselwatch/cameradetail.aspx?terminalid=8" style="font-weight: bold;">view cameras</a> for additional vehicles queued outside the terminal
-            			holding area which will subtract from the listed available space.</em>
-        			<div>
-	                	<table style="width: 100%">
-	                	<tbody>
-	                	<tr>
-	                		<td style="width: 10%; font-weight: bold; background-color: #eeeeee;">Depart</td>
-	                		<td style="width: 30%; font-weight: bold; background-color: #eeeeee;">Destination</td>
-	                		<td style="width: 15%; font-weight: bold; background-color: #eeeeee; text-align: center;">Drive-up</td>
-	                		<td class="termcondvessels" style="width: 20%; font-weight: bold; background-color: #eeeeee;">Vessel</td>
-	                	</tr>
-	                	<tr onmouseover="style.backgroundColor='#E8F9E6'" onmouseout="style.backgroundColor=''">
-	                	    <td style="white-space: nowrap;">{{ time }}</td>
-	                	    <td>
-	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/TerminalDetail.aspx?terminalid=12" title="Check Terminal conditions!" target="_self">Kingston</a>
-	                		</td>
-	                		<td style="background-color: #FFFF00; text-align: center;">
-	                			<span style="white-space: nowrap;">{{ space }}</span>
-	                		</td>
-	                		<td class="termcondvessels">
-	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/vesseldetail.aspx?vessel_id=36">Walla Walla</a>
-	                		</td>
-	                	</tr>
+    				<p><strong>Approximately... </strong><br/>
+    				<table style="width: 50%" align="center">
+    				<tr>
+	                	<td height="50" style="background-color: #FFFF66; text-align: center; border-radius: 20px;">
+                      {% if space != None %}
+                        <strong>{{ space }}</strong> Spaces Available
+                      {% else %}
+                        No data available
+                      {% endif %}
+                    </td>
+	                </tr>
 	                	</tbody>
-	                	</table>
-           				<p id="tclegendheader"><strong>Space Availability Legend</strong></p>
-	                    <ul id="tclegend">
-	                        <li><div style="background-color: #00FF00;"></div>60%-100%</li>
-	                        <li><div style="background-color: #FFFF00;"></div>10%-60%</li>
-	                        <li><div style="background-color: #FF0000;"></div>0%-10%</li>
-	                        <li><div style="background-color: #888888;"></div>Cancelled / Unavailable</li>
-	                    </ul>
-               		</div>
+	                </table>
+	                <p> for the <strong>{{ time }}</strong> journery aboard the <a href="http://www.wsdot.wa.gov/ferries/vesselwatch/vesseldetail.aspx?vessel_id={{vessel_id}}">{{ vessel_name }}</a>
+        			<br><em><a href="http://www.wsdot.wa.gov/ferries/vesselwatch/cameradetail.aspx?terminalid=8" style="font-weight: bold;">view cameras</a></em>
                		<div style="clear:left;"><hr></div>
     				<div style="text-align:center"><strong>Typical Vehicle Traffic Conditions</strong>
-    				<em><br>Can't make your desired ferry above? Below are the typical availability
-    					levels based on historical data - maybe you can make the the next one!</em></div>
+    				<em><br>Can't make your desired ferry above? Maybe you can make the the next one!</em></div>
                		<div>
-	                	<table style="width: 100%">
-	                	<tbody
-	                	<tr>
-	                		<td style="width: 10%; font-weight: bold; background-color: #eeeeee;">Depart</td>
-	                		<td style="width: 30%; font-weight: bold; background-color: #eeeeee;">Destination</td>
-	                		<td style="width: 15%; font-weight: bold; background-color: #eeeeee; text-align: center;">Typical Space</td>
-	                		<td class="termcondvessels" style="width: 20%; font-weight: bold; background-color: #eeeeee;">Vessel</td>
+	                	<table style="width: 100%; border-radius: 20px;">
+	                	<tbody>
+	                	<tr style="border-radius: 20px;">
+	                		<td style="width: 10%; font-weight: bold; background-color: #336600; color:#FFFFFF">Depart</td>
+	                		<td style="width: 10%; font-weight: bold; background-color: #336600; color:#FFFFFF">Destination</td>
+	                		<td style="width: 35%; font-weight: bold; background-color: #336600; text-align: center; color:#FFFFFF;">Typical Space</td>
+	                		<td class="termcondvessels" style="width: 20%; font-weight: bold; background-color: #336600; color:#FFFFFF;">Vessel</td>
 	                	</tr>
-	                	<tr onmouseover="style.backgroundColor='#E8F9E6'" onmouseout="style.backgroundColor=''">
+	                	<tr>
 	                	    <td style="white-space: nowrap;">7:55 AM</td>
 	                	    <td>
 	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/TerminalDetail.aspx?terminalid=12" title="Check Terminal conditions!" target="_self">Kingston</a>
 	                		</td>
-	                		<td style="background-color: #FF0000; text-align: center;">
-	                			<span style="white-space: nowrap;"></span>
-	                		</td>
+	                		<td style="background-color: #FF0000; text-align: center;color:#FFFFFF; border-radius: 20px;">Usually 1 boat wait</td>
 	                		<td class="termcondvessels">
 	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/vesseldetail.aspx?vessel_id=36">Walla Walla</a>
 	                		</td>
 	                	</tr>
-	                	<tr onmouseover="style.backgroundColor='#E8F9E6'" onmouseout="style.backgroundColor=''">
+	                	<tr>
 	                	    <td style="white-space: nowrap;">8:50 AM</td>
 	                	    <td>
 	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/TerminalDetail.aspx?terminalid=12" title="Check Terminal conditions!" target="_self">Kingston</a>
 	                		</td>
-	                		<td style="background-color: #00FF00; text-align: center;">
-	                			<span style="white-space: nowrap;"></span>
-	                		</td>
+	                		<td style="background-color: #339966; text-align: center; color:#FFFFFF; border-radius: 20px;">Rarely fills up</td>
 	                		<td class="termcondvessels">
-	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/vesseldetail.aspx?vessel_id={{vessel_id}}">{{ vessel_name }}</a>
+	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/vesseldetail.aspx?vessel_id=36">Walla Walla</a>
 	                		</td>
 	                	</tr>
 	                	</tbody>
 	                	</table>
-                    	<p id="tclegendheader"><strong>Space Availability Legend</strong></p>
-	                    <ul id="tclegend">
-	                        <li><div style="background-color: #00FF00;"></div>Vessels typically not full</li>
-	                        <li><div style="background-color: #FFFF00;"></div>Vessels can fill close to sailing time</li>
-	                        <li><div style="background-color: #FF0000;"></div>Likely to wait one sailing or more</li>
-	                        <li><div style="background-color: #888888;"></div>No sailing</li>
-	                    </ul>
            			</div>
 			    </div>
-			    <div style="clear:left;"><hr></div>
+			    <div style="clear:left;"><hr><br></div>
 				<div>
 					<a class="twitter-timeline"  href="https://twitter.com/wsferries" data-widget-id="579352739479568384">Tweets by @wsferries</a>
 					<script>!function(d,s,id){
