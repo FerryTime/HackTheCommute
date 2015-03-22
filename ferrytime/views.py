@@ -10,11 +10,11 @@ from django.http import Http404
 from django.http import HttpResponse
 
 rest_host = "http://www.wsdot.wa.gov/"
-rest_base = ''.join([rest_host,"Ferries/API/Schedule/rest/"])
+rest_base = ''.join([rest_host,"Ferries/API/"])
 payload = {'apiaccesscode': 'd71bf03a-96aa-47cf-9fd1-25ec97e89d93'}
 
 def index(request):
-    schedule_url = ''.join([rest_base,"scheduletoday/6/false"])
+    schedule_url = ''.join([rest_base,"Schedule/rest/scheduletoday/6/false"])
     result_json = requests.get(schedule_url, params=payload).json()
     terminal_combinations = result_json.get(u'TerminalCombos')
     kingston_departures = terminal_combinations[1]
@@ -44,11 +44,10 @@ def forecast(request):
     terminal_id = request.GET['terminal_id']
     selected_time = request.GET['time']
 
-    forecast_url = ''.join([rest_base,"terminalsailingspace/", terminal_id])
+    forecast_url = ''.join([rest_base,"Terminals/rest/terminalsailingspace/", terminal_id])
     result = requests.get(forecast_url, params=payload)
     if result.status_code != 200 :
-        return HttpResponse('Canada, eh?')
-        # raise Http404("Canada, eh?")
+        return HttpResponse('<html><head><title>Sorry!</title></head><body>No current sailings.</body></html>')
     result_json = result.json()
 
     # DriveUpSpaceCount
