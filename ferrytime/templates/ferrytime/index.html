@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>FerryTime!</title>
   <meta http-equiv="Content-Type"  content="text/html; charset=utf-8">
@@ -9,7 +10,9 @@
   <script src="http://code.jquery.com/jquery-1.10.2.min.js" ></script>
   <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js" ></script>
 </head>
+
 <body>
+	<div class = "content">
 	<form action="forecast" method="GET">
 	<div id="main"></div>
 		<h1 id="title">Ferry Time</h1>
@@ -20,7 +23,7 @@
 			{% else %}
 			<h3 id="UserName">Please Log in</h3>
 			{% endif %}
-			<h4 id="UserName"> Route : Edmonds - Kingston</h4>
+			<h4 id="UserName"> Route : Kingston - Edmonds</h4>
 		</div>
 		<label id ="B1" for="select-native-1">Next Ferry Available:</label>
 		<div class="ui-field-contain">
@@ -31,8 +34,9 @@
 			</select>
 			<input type="hidden" name="terminal_id" value="{{ terminal_id }}"/>
 		</div>
-		<input class= "Buttons" type="submit" value ="Select">
-	</div>
+		<input id= "Buttons" type="submit" value ="Select">
 	</form>
+</div>
 </body>
+
 </html>

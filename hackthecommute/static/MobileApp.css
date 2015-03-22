@@ -1,22 +1,29 @@
-body {margin:0px;padding:0px;}
+body {
+	margin:0px;
+	padding:0px;
+}
 #main > div {bottom:50px;}
-
+.content{
+	background-color: #CDEEC1;
+	height: 1000px;
+	padding-top: 0px;
+}
 h1 {
-	text-align: center;
+	text-align: left;
 	margin-left: 15px;
 	font-size: 30px;
-	font-family: Arial;
+	font-family: Apple Chancery;
 	font-style: italic;
-	color: #339933;
+	color: #366B23;
 }
 
 .mainbar{
 	margin-left: auto;
     margin-right: auto;
     width: 70%;
-	width: 600px;
-	height: 20px;
-	background-color: #339933;
+	width: 800px;
+	height: 5px;
+	background-color: #366B23;
 	box-shadow: 4px 6px #666666;
 }
 #op{
@@ -26,15 +33,15 @@ h1 {
 #B1{
 	margin-left: 15px;
 	font-family: Arial;
-	color : #339933;
+	color : #366B23;
 
 }
 .Buttons{
 	display : inline;
 	padding: 4px 6px;
 	border: 1px solid #777;
-	background: #333333;
-	color: #00cc33;
+	background-color: #999999;
+	color: #366B23;
 	margin-left: 10px;
 	border-radius: 5px;
 	-moz-box-shadow : 2px 2px 2px #555555;
@@ -43,7 +50,7 @@ h1 {
 }
 #op {
 	background : #333333;
-	color: #00cc33;
+	color: #366B23;
 	width: 200px;
 	padding :5px;
 	font-size: 14px;
@@ -53,9 +60,20 @@ h1 {
 	font-size: 20px;
 	font-family: Arial;
 	padding: 10px;
-	color:#339933;
+	color:#366B23;
 }
 #title{
 	letter-spacing: 2px;
 	text-shadow: 4px 0px #666666;
+}
+.ui-btn-icon-left:after,
+.ui-btn-icon-right:after,
+.ui-btn-icon-top:after,
+.ui-btn-icon-bottom:after,
+.ui-btn-icon-notext:after {
+	background-color: #666666 ;
+	background-position: center center;
+	background-repeat: no-repeat;
+	-webkit-border-radius: 1em;
+	border-radius: 1em;
 }
