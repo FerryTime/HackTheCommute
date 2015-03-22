@@ -60,12 +60,9 @@ def forecast(request):
     departure_times = list()
     for time in times:
         json_date = time.get('DepartingTime')
-        departure_datetime = datetime_from_asp_json(json_date)
-        if departure_datetime > human_time:
-            departure_times.append(((str(departure_datetime)),str(json_date)))
-
-    for time in departure_times:
-        str(time[0])
+        departure_time = datetime_from_asp_json(json_date)
+        if departure_time > (human_time):
+            departure_times.append(((str(departure_time)),str(json_date)))
 
     # Get data on spots available
     forecast_url = ''.join([rest_base,"Terminals/rest/terminalsailingspace/", str(terminal_id)])
@@ -101,7 +98,7 @@ def forecast(request):
     elif 0.10 > percentage:
         bg_color = "#FF0000"
 
-    context = {"space" : drive_up_space_count, "time": human_time, "vessel_name": vessel_name, "vessel_id": vessel_id, "bg_color": bg_color}
+    context = {"space" : drive_up_space_count, "time": human_time, "vessel_name": vessel_name, "vessel_id": vessel_id, "bg_color": bg_color, "departure_times": departure_times}
 
     return render(request, 'ferrytime/forecast.html', context)
 

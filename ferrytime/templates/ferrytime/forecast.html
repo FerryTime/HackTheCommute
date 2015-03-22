@@ -60,18 +60,9 @@
 	                		<td style="width: 35%; font-weight: bold; background-color: #336600; text-align: center; color:#FFFFFF;">Typical Space</td>
 	                		<td class="termcondvessels" style="width: 20%; font-weight: bold; background-color: #336600; color:#FFFFFF;">Vessel</td>
 	                	</tr>
+                    {% for k, v in departure_times %}
 	                	<tr>
-	                	    <td style="white-space: nowrap;">7:55 AM</td>
-	                	    <td>
-	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/TerminalDetail.aspx?terminalid=8" target="_self">Edmonds</a>
-	                		</td>
-	                		<td style="background-color: #FF0000; text-align: center;color:#FFFFFF; border-radius: 20px;">Usually 1 boat wait</td>
-	                		<td class="termcondvessels">
-	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/vesseldetail.aspx?vessel_id=36">Walla Walla</a>
-	                		</td>
-	                	</tr>
-	                	<tr>
-	                	    <td style="white-space: nowrap;">8:50 AM</td>
+	                	    <td style="white-space: nowrap;">{{ k }}</td>
 	                	    <td>
 	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/TerminalDetail.aspx?terminalid=8" target="_self">Edmonds</a>
 	                		</td>
@@ -79,7 +70,9 @@
 	                		<td class="termcondvessels">
 	                			<a href="http://www.wsdot.wa.gov/ferries/vesselwatch/vesseldetail.aspx?vessel_id=36">Walla Walla</a>
 	                		</td>
+
 	                	</tr>
+                    {% endfor %}
 	                	</tbody>
 	                	</table>
 	                	<hr>
