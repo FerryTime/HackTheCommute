@@ -6,6 +6,7 @@ from django.shortcuts import render
 from django.core.context_processors import csrf
 import json
 import requests
+from datetime import datetime
 
 # Create your views here.
 def index(request):
@@ -21,7 +22,10 @@ def index(request):
 
     departures = list()
     for time in times:
-        departures.append(time.get(u'DepartingTime'))
+        timeIn = time.get('DepartingTime')
+        timeSlice = int(timeIn[6:-7])
+        d = datetime.fromtimestamp(timeSlice/1000.00)
+        departures.append(str(d))
 
     # need terminal ID and departure time
     context = { "schedule":departures, "terminal_id":terminal_id }
