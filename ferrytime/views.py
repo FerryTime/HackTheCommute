@@ -72,15 +72,21 @@ def forecast(request):
     drive_up_space_count = None
     vessel_name = str()
     vessel_id = str()
+    max_space_count = int()
 
     for x in departing_spaces:
         if str(x[u'Departure']) == selected_time:
             drive_up_space_count = str(x['SpaceForArrivalTerminals'][0]['DriveUpSpaceCount'])
             vessel_name = str(x['SpaceForArrivalTerminals'][0]['VesselName'])
             vessel_id = str(x['SpaceForArrivalTerminals'][0]['VesselID'])
+            max_space_count = int(x['SpaceForArrivalTerminals'][0]['MaxSpaceCount'])
             break
 
-    context = {"space" : drive_up_space_count, "time": human_time, "vessel_name": vessel_name, "vessel_id": vessel_id}
+    # calculate percent and determine color based on it
+    # drive_up_space_count / max_space_count
+    bg_color = "#FFFF66"
+
+    context = {"space" : drive_up_space_count, "time": human_time, "vessel_name": vessel_name, "vessel_id": vessel_id, "bg_color": bg_color}
 
     return render(request, 'ferrytime/forecast.html', context)
 
@@ -95,6 +101,8 @@ def register(request):
     return render(request, "registration/register.html", {
         'form': form,
     })
+def login(request):
+    pass
 
 def datetime_from_asp_json(json_date):
     milliseconds_since_epoch_tz = int(json_date[6:-7])
