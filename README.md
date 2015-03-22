@@ -41,6 +41,7 @@ Our approach for satisfying this challenge was to:
       - WSDOT Booth Information
       - Vehicle Detection Loops
     - Connecting with the Ferry Commnunity
+    - Parking Space Information for Walk-Ons
 
 ## Team Members
 
