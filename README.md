@@ -62,7 +62,7 @@ We made use of:
 - The [WSDOT API Website](http://wsdot.wa.gov/traffic/api/)
     - Specifically, [WSDOT Ferries Terminals] (http://www.wsdot.wa.gov/ferries/api/terminals/rest/help)
     - And, [WSDOT Ferries Schedule] (http://www.wsdot.wa.gov/ferries/api/schedule/rest/help)
-- @wsdot  WSDOT Twitter feed
+- [@wsdot]  WSDOT Twitter feed
 
 ## Contributing
 
