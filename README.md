@@ -11,7 +11,7 @@ Our app is live at http://fairytime.herokuapp.com/.
 
 ## Challenge and Approach
 
-Our submission is for [Challenge #2: Improve the commuter experience in any single mode.](https://codeforseattle.hackpad.com/Submission-Guidelines-UTxrlISdazl).
+Our submission is for [Challenge #2: Improve the commuter experience in any single mode](https://codeforseattle.hackpad.com/Submission-Guidelines-UTxrlISdazl).
 
 Our approach for satisfying this challenge was to:
 
@@ -23,7 +23,7 @@ Our approach for satisfying this challenge was to:
         Many of the surrounding areas need to get into Seattle, which has the highest income average in the region
 
 2.  Execution.
-    - Awesomeness of Ferry's Fairies, to be seen in action!
+    - Awesomeness of Ferry Fairy, to be seen in action!
 
 3.  The Impact.
     - People have a better travel experience by knowing what to expect
