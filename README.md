@@ -32,7 +32,7 @@ Once we did that, we knew we were guaranteed to win!
     - People have a better travel experience by knowing what to expect
     - From this app, it can build more real time information for WSF, which can inform policy makers 
 4.  Implementation & Sustainability.
-    - Imp and substained can depend on advertising to ferry commuters 
+    - Can depend on advertising to ferry commuters 
       - From feedback, interest seems high
     - Moving forward - need realtime assessment for people "up stream" of the toll booth
       - Utilization of GPS location
@@ -48,7 +48,7 @@ Our team is comprised of:
 - [@thalijw](http://github.com/thalijw) - Wisam Thalij - general javascript and html stuffs
 - [@bkstamm67](http://github.com/bkstamm67) - Brian Stamm - general data stuffs
 - [@musickka](http://github.com/musickka) - Katie Musick - general javascript and html stuffs
-- [@]() - Latham Fell - general support stuffs
+- [@]() - Latham Fell - general support, father extraordinaire
 - [@shawnbuck8](http://github.com/shawnbuck8) - Shawn Buck - general mapping stuffs
 - [@qayshp](http://github.com/qayshp) - Qays Poonawala - general dev stuffs
 
@@ -59,6 +59,7 @@ We made use of:
 - Hand harvested unicorn tears. Unicorns are very happy creatures, its hard to make them cry.
 - [mod_bf](http://modbf.sourceforge.net/)
 - The [Top 1,000 Songs To Hear Before You Die](https://opendata.socrata.com/Fun/Top-1-000-Songs-To-Hear-Before-You-Die/ed74-c6ni) dataset and [API](http://dev.socrata.com/foundry/#/opendata.socrata.com/ed74-c6ni)
+- The [WSDOT Ferries Website](http://wsdot.wa.gov/ferries/)
 
 ## Contributing
 
