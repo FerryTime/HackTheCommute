@@ -92,9 +92,9 @@ def forecast(request):
     percentage = float(drive_up_space_count) / float(max_space_count)
 
     if percentage > 0.60:
-        bg_color = "#DD8808"
+        bg_color = "#339966"
     elif percentage < 0.60 and percentage > 0.10:
-        bg_color = "#FFFF66"
+        bg_color = "#DD8808"
     elif 0.10 > percentage:
         bg_color = "#FF0000"
 
