@@ -10,4 +10,5 @@ urlpatterns = patterns('',
     url(r'^index/', views.index, name='index'),
     url(r'^$', views.index, name='index'),
     url(r'^forecast$', views.forecast, name='forecast'),
+    url(r'^register$', views.register, name='register'),
 )
