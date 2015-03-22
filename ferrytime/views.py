@@ -84,14 +84,14 @@ def forecast(request):
 
     # calculate percent and determine color based on it
     # drive_up_space_count / max_space_count
-    percentage = drive_up_space_count / max_space_count
-    
+    percentage = float(drive_up_space_count) / float(max_space_count)
+
     if percentage > 0.60:
-        bg_color = "#FF0000"
+        bg_color = "#339966"
     elif percentage < 0.60 and percentage > 0.10:
         bg_color = "#FFFF66"
     elif 0.10 > percentage:
-        bg_color = "#339966"
+        bg_color = "#FF0000"
 
     context = {"space" : drive_up_space_count, "time": human_time, "vessel_name": vessel_name, "vessel_id": vessel_id, "bg_color": bg_color}
 
@@ -110,7 +110,7 @@ def register(request):
     })
 
 def login(request):
-    
+
     pass
 
 def datetime_from_asp_json(json_date):
